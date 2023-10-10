@@ -6,10 +6,11 @@ List<string> ToDoList = new List<string>();
 bool RunProgram = true;
 while (RunProgram){
     Console.WriteLine("\nPlease type 1 to add to your list"); // Complete
-    Console.WriteLine("Please type 2 to remove from your list");
+    Console.WriteLine("Please type 2 to remove from your list"); // String literal complete, index balue ot complete
     Console.WriteLine("Please type 3 to view your list"); // Complete
-    Console.WriteLine("Please type 4 to mark a task as complete");
+    Console.WriteLine("Please type 4 to mark a task as complete"); //Complete
     Console.WriteLine("Please type 5 to end program"); // Complete
+
     string Response = Console.ReadLine();
         switch (Response){
 
@@ -43,7 +44,7 @@ while (RunProgram){
                 }
                 else{
 
-                    Console.WriteLine("Value not found");
+                    Console.WriteLine("Value not found, you have to type the string literal");
 
                 }
                 break;
@@ -56,8 +57,25 @@ while (RunProgram){
                 break;
 
             case "4":
-                Console.WriteLine("this is where i'll print the array of todos");
-                Console.WriteLine("\nPlease enter the task you would like to be marked as complete.");
+                foreach (string number in ToDoList)
+                {
+                    Console.WriteLine(number);
+                }
+                Console.WriteLine("\nPlease enter the task you would like to be marked as complete.(first item is value 0");
+                string CompleteTask = Console.ReadLine();
+                int CompleteTaskIndex = Convert.ToInt32(CompleteTask);
+                if(CompleteTaskIndex >= 0 && CompleteTaskIndex < ToDoList.Count){
+    
+                    string CurrentItem = ToDoList[CompleteTaskIndex];
+
+                    string UpdatedString = " ✓";
+
+                    ToDoList[CompleteTaskIndex] = CurrentItem + UpdatedString;
+                    Console.WriteLine("Updated ToDoList: ");
+                    foreach (string number in ToDoList){
+                        Console.WriteLine(number);
+                    }
+            }
                 break;
 
             case "5":
