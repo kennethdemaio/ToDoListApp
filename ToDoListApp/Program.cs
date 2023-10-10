@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-
 Console.WriteLine("Welcome to my Todo list program!");
 Console.WriteLine("Please select from the options below.");
-
 List<string> ToDoList = new List<string>();
 
 bool RunProgram = true;
@@ -13,28 +11,29 @@ while (RunProgram){
     Console.WriteLine("Please type 4 to mark a task as complete");
     Console.WriteLine("Please type 5 to end program");
     string Response = Console.ReadLine();
-        switch (Response) {
+        switch (Response){
+
             case "1":
                 Console.WriteLine("Please enter the task you would like to add to your todo list.");
                 string AddToList = Console.ReadLine();
-                if (AddToList != null){
+                if (!string.IsNullOrEmpty(AddToList)){
                     ToDoList.Add(AddToList);
                 }
                 else{
-                    Console.WriteLine("Please write a valid response");
+                    Console.WriteLine("Please input a valid response and not null");
                 }
-                foreach (string number in ToDoList){
-                Console.WriteLine(number);
-                }
-                break;
+               break;
 
             case "2":
                  Console.WriteLine("this is where i'll print the array of todos");
                  Console.WriteLine("Please enter the task you would like to be removed from your todo list");
                 break;
 
-                case "3":
-                Console.WriteLine("This is where i'll print the list");
+            case "3":
+                foreach (string number in ToDoList)
+                {
+                    Console.WriteLine(number);
+                }
                 break;
 
             case "4":
