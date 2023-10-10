@@ -30,8 +30,7 @@ while (RunProgram){
                break;
 
             case "2":
-                foreach (string number in ToDoList)
-                {
+                foreach (string number in ToDoList){
                     Console.WriteLine(number);
                 }
                 Console.WriteLine("\nPlease enter the task you would like to be removed from your todo list");
@@ -50,15 +49,13 @@ while (RunProgram){
                 break;
 
             case "3":
-                foreach (string number in ToDoList)
-                {
+                foreach (string number in ToDoList){
                     Console.WriteLine(number);
                 }
                 break;
 
             case "4":
-                foreach (string number in ToDoList)
-                {
+                foreach (string number in ToDoList){
                     Console.WriteLine(number);
                 }
                 Console.WriteLine("\nPlease enter the task you would like to be marked as complete.(first item is value 0");
@@ -71,11 +68,12 @@ while (RunProgram){
                     string UpdatedString = " ✓";
 
                     ToDoList[CompleteTaskIndex] = CurrentItem + UpdatedString;
+                    Console.Clear();
                     Console.WriteLine("Updated ToDoList: ");
                     foreach (string number in ToDoList){
                         Console.WriteLine(number);
                     }
-            }
+                }
                 break;
 
             case "5":
